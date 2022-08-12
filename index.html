@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Conciergerie</title>
+</head>
+
+<body>
+    <main class="dflex">
+    <nav class="navMain">
+        <div class="navTop">
+            <h1>Conciergerie</h1>
+            <ul>
+                <li><a href="">Accueil</a></li>
+                <li><a href="">Voir</a></li>
+                <li><a href="">Modifier</a></li>
+                <li><a href="">Ajouter</a></li>
+                <li><a href="">Supprimer</a></li>
+            </ul>
+        </div>
+        <div class="navBottom">
+            <h2>Compte</h2>
+            <ul>
+                <li><a href="">Profil</a></li>
+                <li><a href="">Déconnexion</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- *********************************************************** -->
+<!-- *********************tableau******************************* -->
+<!-- *********************************************************** -->
+<section class="tableau">
+    <table class="tableTache"> 
+        <thead class="tableTop">
+            <tr>
+                <th>Tache à effectuer</th>
+                <th>Résident</th>
+                <th>Etage</th>
+                <th>Appartement</th>
+                <th>Date</th>
+                <th>Supprimer</th>
+                <th>Terminée</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($tache_a_faire as $tache) : ?>
+            <tr>
+                <td><?= strip_tags($tache['tache']) ?></td>
+                <td><?= strip_tags($tache['nom_resident']) ?></td>
+                <td><?= strip_tags($tache['etage']) ?></td>
+                <td><?= strip_tags($tache['numero_appartement']) ?></td>
+                <td><?= strip_tags($tache['date']) ?></td>
+                <td>
+                    <form action="includes/delete.php" method="get">
+                        <input type="hidden" name="id_tache" value="<?= $tache['id_tache'] ?>">
+                        <input type="submit" value="Supprimer">
+                    </form>
+                </td>
+                <td>
+                    <form action="includes/finish.php" method="get">
+                        <input type="hidden" name="id_tache" value="<?= $tache['id_tache'] ?>">
+                        <input type="submit" value="terminée">
+                    </form>
+                <td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</section>
+
+</main>
+</body>
+
+</html>
