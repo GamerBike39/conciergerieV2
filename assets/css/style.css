@@ -1,10 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 a {
     text-decoration: none;
     color: #ffffff;
 }
 
 main {
-    width: 100vw;
     height: 100vh;
     background-color: #f5f5f5;
     gap: 5vw;
@@ -16,7 +20,7 @@ main {
 
 .navMain {
     background-image: linear-gradient(195deg, #42424a 0%, #191919 100%);
-    height: 97vh;
+    height: 100vh;
     width: 17vw;
     display: flex;
     flex-direction: column;
@@ -25,18 +29,50 @@ main {
     color: azure;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     font-size: 1rem;
-    border-radius: 0.75rem;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 3%;
+    margin: 0;
+    position: relative;
+}
+
+.navTop>ul:nth-child(2)>li:nth-child(2)>a:nth-child(1)::after {
+    content: url(../img/read.svg);
+    position: absolute;
+    left: -15px;
+}
+
+.navTop>ul:nth-child(2)>li:nth-child(3)>a:nth-child(1)::after {
+    content: url(../img/update.svg);
+    position: absolute;
+    left: -15px;
+}
+
+.navTop>ul:nth-child(2)>li:nth-child(4)>a:nth-child(1)::after {
+    content: url(../img/create.svg);
+    position: absolute;
+    left: -15px;
+}
+
+.navTop>ul:nth-child(2)>li:nth-child(5)>a:nth-child(1)::after {
+    content: url(../img/delete.svg);
+    position: absolute;
+    left: -15px;
 }
 
 .navBottom {
     height: 50%;
+    width: 50%;
 }
 
 .navTop {
     margin-top: 35%;
 }
 
-.tableau {
+#tableau {
     width: 70%;
     text-align: center;
     background-color: #f5f5f5;
@@ -44,12 +80,33 @@ main {
     height: 65%;
 }
 
-.tableTache {
+#tableTache {
     width: 100%;
+    padding: 1%;
 }
 
 th,
 td {
     padding: 1%;
     margin: 1%;
+}
+
+input[type=submit] {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 3%;
+    margin: 1%;
+    cursor: pointer;
+    background: none;
+}
+
+
+#content {
+    width: 80%;
+}
+
+#cardsTendance {
+    height: 20vh;
+    width: 80%;
+    justify-content: space-evenly;
 }
