@@ -40,6 +40,7 @@
                     <td><?= strip_tags($tache['etage']) ?></td>
                     <td><?= strip_tags($tache['numero_appartement']) ?></td>
                     <td><?= strip_tags($tache['date']) ?></td>
+
                     <td>
                         <form action="includes/delete.php" method="get">
                             <input type="hidden" name="id_tache" value="<?= $tache['id_tache'] ?>">
